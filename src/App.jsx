@@ -13,11 +13,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/benefits" element={<Benefits />} />
-        <Route path="/products" element={<OurProducts />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/faqs" element={<FAQs />} />
+        {/* Optional: Redirect other paths to home if they are no longer needed as separate pages */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

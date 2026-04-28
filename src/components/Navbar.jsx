@@ -1,57 +1,71 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/Group 1.png";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Benefits", path: "/benefits" },
-    { name: "Products", path: "/products" },
-    { name: "Reviews", path: "/reviews" },
-    { name: "FAQs", path: "/faqs" },
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Benefits", id: "benefits" },
+    { name: "Products", id: "products" },
+    { name: "Reviews", id: "reviews" },
+    { name: "FAQs", id: "faqs" },
   ];
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <nav className="absolute left-0 top-7 z-20 w-full bg-transparent">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+    <nav
+      className={`fixed left-0 top-0 z-50 w-full py-4 transition-all duration-300 ${
+        isScrolled
+          ? "bg-black/20 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="w-full px-4 sm:px-6 lg:px-10">
         <div className="flex h-16 items-center justify-between">
-          <NavLink
-            to="/"
-            className="flex items-center gap-1 font-extrabold text-2xl text-white"
+          <button
+            onClick={() => scrollToSection("home")}
+            className="flex items-center gap-1 font-extrabold text-2xl text-white cursor-pointer"
           >
             <img
               src={logo}
               alt="AgriHouse logo"
-              className="h-12 w-12 object-contain"
+              className="h-10 w-10 object-contain"
             />
-            <span>AgriHouse</span>
-          </NavLink>
+            <span className="text-white">AgriHouse</span>
+          </button>
 
-          <div className="hidden md:flex h-12 flex-1 max-w-2xl items-center justify-center gap-8 rounded-4xl border border-white px-6">
+          <div className="hidden h-12 shrink-0 items-center gap-3 rounded-full border border-white/30 bg-white/10 px-3 shadow-lg backdrop-blur-md md:flex">
             {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `px-4 py-1.5 rounded-full transition-all duration-300 text-sm font-medium ${
-                    isActive
-                      ? "bg-black text-white" // Black background when active
-                      : "text-white/80 hover:text-white hover:bg-white/10" // Transparent/hover state
-                  }`
-                }
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="flex h-10 items-center rounded-full px-5 transition-all duration-300 text-[20px] font-medium text-[#1E1E1E] hover:text-white hover:bg-gray-900 cursor-pointer"
               >
                 {item.name}
-              </NavLink>
+              </button>
             ))}
           </div>
 
-          <NavLink
-            to="/login"
-            className="rounded-full bg-gray-900 px-5 py-2 font-bold text-white transition hover:bg-gray-700"
+          <button
+            className="rounded-full bg-gray-900 px-6 py-3 font-semibold  text-white transition hover:bg-gray-700"
           >
-            Login
-          </NavLink>
+            Log in
+          </button>
         </div>
       </div>
     </nav>
