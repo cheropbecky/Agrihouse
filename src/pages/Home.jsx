@@ -17,8 +17,8 @@ export default function Home() {
           alt="Modern agriculture field"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-black/25 to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-[35%] bg-gradient-to-l from-black/15 to-transparent" />
+        <div className="absolute inset-y-0 left-0 w-[55%] bg-linear-to-r from-black/25 to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-[35%] bg-linear-to-l from-black/15 to-transparent" />
 
         <div className="relative z-10 h-full w-full flex flex-col justify-center px-6 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-end w-full max-w-1600px mx-auto">
@@ -29,7 +29,7 @@ export default function Home() {
                 className="absolute -top-4 -left-10 h-20 w-20 p-3 shadow-lg"
               />
               <h1
-                className="leading-[0.85] tracking-tighter text-white [font-weight:900]"
+                className="leading-[0.85] tracking-tighter text-white font-black"
                 style={{
                   fontSize: "clamp(50px, 8vw, 96px)",
                   fontWeight: 900,
@@ -37,11 +37,11 @@ export default function Home() {
                 }}
               >
                 Farm products <br />
-                <span className="text-white/55 [font-weight:900]">without </span>{" "}
-                <span className="text-[#1E1E1E] [font-weight:900]">pesticides</span>
+                <span className="text-white/55 font-black">without </span>{" "}
+                <span className="text-[#1E1E1E] font-black">pesticides</span>
                 <br />
                 — delivered fresh <br />
-                by <span className="text-[#1E1E1E] [font-weight:900]">tomorrow</span>
+                by <span className="text-[#1E1E1E] font-black">tomorrow</span>
               </h1>
 
               <div className="mt-12">
@@ -70,7 +70,7 @@ export default function Home() {
             </div>
             <div className="flex justify-end italic bottom-20 lg:col-span-4 lg:translate-y-8">
               <p
-                className="text-white italic text-xl md:text-2xl leading-tight max-w-[360px] text-left opacity-95"
+                className="text-white italic text-xl md:text-2xl leading-tight max-w-90 text-left opacity-95"
                 style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 <span className="italic font-bold">Struggling</span> to find truly

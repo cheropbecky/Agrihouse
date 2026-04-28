@@ -4,7 +4,7 @@ import logo from "../assets/Group 1.png";
 export default function Footer() {
   return (
     <footer id="footer" className="bg-[#17181c] px-4 py-24 text-white sm:px-6 lg:px-10">
-      <div className="mx-auto w-full max-w-[1320px]">
+      <div className="mx-auto w-full max-w-330">
         <div className="grid grid-cols-1 gap-10 pb-10 md:grid-cols-12">
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
@@ -60,17 +60,17 @@ export default function Footer() {
 
         <div className="select-none text-center leading-none mt-12 md:mt-16">
           <p className="flex items-end justify-center gap-1 text-[110px] font-black tracking-tight md:text-[180px]">
-            <span className="bg-gradient-to-b from-white to-[#484848] bg-clip-text text-transparent">A</span>
-            <span className="bg-gradient-to-b from-[#ff5a14] to-[#1f1f1f] bg-clip-text text-transparent">G</span>
-            <span className="bg-gradient-to-b from-white to-[#484848] bg-clip-text text-transparent">R</span>
-            <span className="bg-gradient-to-b from-white to-[#484848] bg-clip-text text-transparent">I</span>
-            <span className="bg-gradient-to-b from-[#ff5a14] to-[#1f1f1f] bg-clip-text text-transparent">H</span>
-            <span className="relative inline-flex h-[0.9em] w-[0.9em] items-center justify-center rounded-full border-[0.14em] border-[#2e2f34] bg-gradient-to-b from-white to-[#22252b]">
+            <span className="bg-linear-to-b from-white to-[#484848] bg-clip-text text-transparent">A</span>
+            <span className="bg-linear-to-b from-[#ff5a14] to-[#1f1f1f] bg-clip-text text-transparent">G</span>
+            <span className="bg-linear-to-b from-white to-[#484848] bg-clip-text text-transparent">R</span>
+            <span className="bg-linear-to-b from-white to-[#484848] bg-clip-text text-transparent">I</span>
+            <span className="bg-linear-to-b from-[#ff5a14] to-[#1f1f1f] bg-clip-text text-transparent">H</span>
+            <span className="relative inline-flex h-[0.9em] w-[0.9em] items-center justify-center rounded-full border-[0.14em] border-[#2e2f34] bg-linear-to-b from-white to-[#22252b]">
               <img src={logo} alt="" aria-hidden="true" className="h-[0.34em] w-[0.34em] object-contain" />
             </span>
-            <span className="bg-gradient-to-b from-white to-[#484848] bg-clip-text text-transparent">U</span>
-            <span className="bg-gradient-to-b from-white to-[#484848] bg-clip-text text-transparent">S</span>
-            <span className="bg-gradient-to-b from-white to-[#484848] bg-clip-text text-transparent">E</span>
+            <span className="bg-linear-to-b from-white to-[#484848] bg-clip-text text-transparent">U</span>
+            <span className="bg-linear-to-b from-white to-[#484848] bg-clip-text text-transparent">S</span>
+            <span className="bg-linear-to-b from-white to-[#484848] bg-clip-text text-transparent">E</span>
           </p>
         </div>
 

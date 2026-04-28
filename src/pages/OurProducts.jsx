@@ -66,22 +66,30 @@ export default function OurProducts() {
 
   return (
     <section id="products" className="bg-[#f4f4f4] py-24 px-4 sm:px-6 lg:px-10">
-      <div className="mx-auto w-full max-w-[1320px]">
-        <div className="mb-10 flex flex-col gap-8 md:mb-12 md:flex-row md:items-start md:justify-between">
+      <div className="mx-auto w-full max-w-330">
+        <div className="mb-10 flex flex-col gap-8 md:mb-12 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="mb-5 inline-flex rounded-full border border-[#ff5a14] px-5 py-2 text-sm font-medium text-[#ff5a14]">
               Our Products
             </span>
-            <h2 className="text-[42px] font-bold leading-[1.05] tracking-tight text-[#202124] sm:text-[52px]">
-              Taste <span className="text-[#6f6f6f]">Real,</span>{" "}
+            <h2
+              className="text-[42px] font-bold leading-[1.05] tracking-tight text-[#202124] sm:text-[52px]"
+              style={{
+                fontSize: "clamp(50px, 8vw, 56px)",
+                fontWeight: 700,
+                fontFamily: "Poppins, sans-serif",
+              }}
+            >
+              <span className="text-black">Taste </span>
+              <span className="text-[#6f6f6f]">Real,</span>{" "}
               <span className="text-[#ff5a14]">Naturally</span>
               <br />
-              Grown Products
+              <span className="text-black">Grown Products</span>
             </h2>
           </div>
 
-          <p className="pt-1 text-right text-[28px] leading-relaxed text-[#4f4f4f] md:max-w-[290px]">
-            No chemicals. No additives. Only quality you can trust.
+          <p className="pt-1 text-right text-[24px] font-medium leading-relaxed text-[#4f4f4f] md:max-w-72.5">
+            No chemicals. No additives.<br/> Only quality you can trust.
           </p>
         </div>
 
@@ -113,10 +121,6 @@ export default function OurProducts() {
                   alt={product.name}
                   className="h-60 w-full object-cover"
                 />
-
-
-
-
               </div>
 
               <h3 className="mb-2 text-[31px] font-semibold leading-tight text-[#212121]">
@@ -135,6 +139,29 @@ export default function OurProducts() {
             </article>
           ))}
         </div>
+      </div>
+      <div className="mt-12 flex justify-center">
+        <button
+          className="flex items-center h-20 gap-4 bg-[#1a1c1e] hover:bg-black text-white px-10 py-5 rounded-full transition-all text-lg font-medium group"
+          style={{ fontFamily: "Urbanist, sans-serif" }}
+        >
+          See More
+          <div className="bg-white rounded-full p-5 group-hover:translate-x-1 transition-transform">
+            <svg
+              className="w-5 h-5 text-black rotate-90"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </div>
+        </button>
       </div>
     </section>
   );
