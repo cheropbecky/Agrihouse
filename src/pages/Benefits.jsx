@@ -16,14 +16,14 @@ export default function Benefits() {
                 {/* Header */}
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
                     <div className="max-w-3xl">
-                        <div className="bg-[#ff5100] text-[#1E1E1E] px-8 py-2.5 rounded-full inline-block font- mb-6 text-lg tracking-wide">
+                        <div className="bg-[#ff5100] text-white px-8 py-3 md:px-10 md:py-3.5 rounded-full inline-block font- mb-6 md:mb-8 text-xl tracking-wide">
                             Benefits
                         </div>
-                        <h2 className="text-8xl md:text-[10.5rem] font-black leading-tight text-[#1E1E1E] tracking-tight">
-                            <span className="text-[#ff5100]">Why</span> Choose Our <br /> Farm <span className="font-black text-[#1E1E1E]">Products</span>
+                        <h2 className="leading-[1.1] text-[#1E1E1E] tracking-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontFamily: 'Poppins, sans-serif' }}>
+                            <span className="text-[#ff5100] font-black">Why</span><span className="text-[#1E1E1E] font-bold"> Choose Our</span> <br /> <span className="text-[#1E1E1E] font-black">Farm</span> <span className="font-normal text-[#1E1E1E]">Products</span>
                         </h2>
                     </div>
-                    <p className="text-lg md:text-xl text-gray-700 max-w-sm lg:text-left font-medium leading-relaxed">
+                    <p className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-sm md:max-w-md lg:max-w-lg lg:text-left font-medium leading-relaxed">
                         Trusted by athletes and health-conscious customers who choose real, chemical-free food every day
                     </p>
                 </div>

@@ -67,35 +67,36 @@ export default function OurProducts() {
   return (
     <section id="products" className="bg-[#f4f4f4] py-24 px-4 sm:px-6 lg:px-10">
       <div className="mx-auto w-full max-w-[1320px]">
-        <div className="mb-10 flex flex-col gap-8 md:mb-12 md:flex-row md:items-start md:justify-between">
+        <div className="mb-10 flex flex-col gap-8 md:mb-12 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="mb-5 inline-flex rounded-full border border-[#ff5a14] px-5 py-2 text-sm font-medium text-[#ff5a14]">
+            <span className="mb-6 inline-flex rounded-full border border-[#fcae8b] px-5 py-1.5 text-sm font-medium text-[#ff5100]">
               Our Products
             </span>
-            <h2 className="text-[42px] font-bold leading-[1.05] tracking-tight text-[#202124] sm:text-[52px]">
-              Taste <span className="text-[#6f6f6f]">Real,</span>{" "}
-              <span className="text-[#ff5a14]">Naturally</span>
+            <h2 className="leading-[1.1] tracking-tight text-[#1E1E1E]" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontFamily: 'Poppins, sans-serif' }}>
+              <span className="font-black text-[#1E1E1E]">Taste</span>{" "}
+              <span className="font-black text-[#7a7a7a]">Real,</span>{" "}
+              <span className="text-[#ff5100] font-black">Naturally</span>
               <br />
-              Grown Products
+              <span className="font-black text-[#1E1E1E]">Grown Products</span>
             </h2>
           </div>
 
-          <p className="pt-1 text-right text-[28px] leading-relaxed text-[#4f4f4f] md:max-w-[290px]">
-            No chemicals. No additives. Only quality you can trust.
+          <p className="text-sm md:text-base leading-relaxed text-[#555] font-medium lg:text-left md:mt-12">
+            No chemicals. No additives.<br /> Only quality you can trust.
           </p>
         </div>
 
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-2xl font-medium text-[#3b3b3b]">Our Products</p>
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm font-medium text-[#6b6b6b]">Our Products</p>
 
-          <div className="flex flex-wrap gap-2 rounded-full">
-            <button className="rounded-xl border border-[#b8b8b8] px-7 py-2 text-xl text-[#444] transition hover:bg-white">
+          <div className="flex flex-wrap gap-2 md:gap-3">
+            <button className="rounded-lg border border-[#d1d1d1] bg-transparent px-5 py-1.5 text-sm font-medium text-[#444] transition hover:border-[#b1b1b1]">
               Best choice
             </button>
-            <button className="rounded-xl bg-[#2b2b2b] px-7 py-2 text-xl text-white">
+            <button className="rounded-lg bg-[#2b2b2b] px-6 py-1.5 text-sm font-medium text-white transition hover:bg-[#1a1a1a]">
               Popular
             </button>
-            <button className="rounded-xl border border-[#b8b8b8] px-7 py-2 text-xl text-[#444] transition hover:bg-white">
+            <button className="rounded-lg border border-[#d1d1d1] bg-transparent px-5 py-1.5 text-sm font-medium text-[#444] transition hover:border-[#b1b1b1]">
               New
             </button>
           </div>
@@ -105,7 +106,7 @@ export default function OurProducts() {
           {products.map((product) => (
             <article
               key={product.id}
-              className="rounded-xl border border-[#d6d6d6] bg-[#efefef] p-3 shadow-sm"
+              className="rounded-xl border border-[#d6d6d6] bg-white p-3 shadow-sm"
             >
               <div className="relative mb-3 overflow-hidden rounded-lg">
                 <img
@@ -119,21 +120,32 @@ export default function OurProducts() {
 
               </div>
 
-              <h3 className="mb-2 text-[31px] font-semibold leading-tight text-[#212121]">
+              <h3 className="mb-1 text-lg p-3 md:text-xl font-semibold leading-tight text-[#212121]">
                 {product.name}
               </h3>
-              <p className="mb-4 text-sm leading-relaxed text-[#606060]">
+              <p className="mb-6 p-3 pt-1 text-sm leading-relaxed text-[#606060]">
                 {product.description}
               </p>
 
               <div className="flex items-center justify-between">
-                <p className="text-3xl font-medium text-[#2f2f2f]">{product.price}</p>
-                <button className="rounded-lg bg-[#ff5a14] px-10 py-2 text-2xl font-medium text-white transition hover:bg-[#ef4f0f]">
+                <p className="text-xl pl-5 font-medium text-[#2f2f2f]">{product.price}</p>
+                <button className="rounded-lg bg-[#ff5a14] px-6 py-2 text-sm font-medium text-white transition hover:bg-[#ef4f0f]">
                   Buy
                 </button>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <button className="flex items-center gap-4 rounded-full bg-[#242424] py-1.5 pl-6 pr-1.5 text-white transition hover:bg-[#3a3a3a] shadow-md">
+            <span className="text-sm font-medium">See More</span>
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black drop-shadow-sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+              </svg>
+            </div>
+          </button>
         </div>
       </div>
     </section>
