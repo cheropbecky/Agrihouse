@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import logo from "../assets/Group 1.png";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const navItems = [
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
@@ -28,13 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed left-0 top-0 z-50 w-full py-4 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/20 backdrop-blur-md border-b border-white/10"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className="absolute left-0 top-0 z-50 w-full py-4 bg-transparent">
       <div className="w-full px-4 sm:px-6 lg:px-10">
         <div className="flex h-16 items-center justify-between">
           <button
@@ -54,7 +39,7 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="flex h-10 items-center rounded-full px-5 transition-all duration-300 text-[20px] font-medium text-[#1E1E1E] hover:text-white hover:bg-gray-900 cursor-pointer"
+                className="flex h-10 items-center rounded-full px-5 transition-all duration-300 text-[20px] text-[#1E1E1E] hover:text-white hover:bg-gray-900 cursor-pointer"
               >
                 {item.name}
               </button>
@@ -62,7 +47,7 @@ const Navbar = () => {
           </div>
 
           <button
-            className="rounded-full bg-gray-900 px-6 py-3 font-semibold  text-white transition hover:bg-gray-700"
+            className="rounded-full bg-gray-900 px-6 py-3 font-semibold text-white transition hover:bg-gray-700"
           >
             Log in
           </button>
